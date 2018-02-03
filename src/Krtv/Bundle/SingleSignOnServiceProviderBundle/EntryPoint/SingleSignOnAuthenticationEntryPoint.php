@@ -130,6 +130,6 @@ class SingleSignOnAuthenticationEntryPoint implements AuthenticationEntryPointIn
         // Sign data
         $redirectUri = $this->uriSigner->sign($redirectUri);
 
-        return new RedirectResponse($this->generateUri($request, $redirectUri));
+        return new RedirectResponse($this->httpUtils->generateUri($request, $redirectUri));
     }
 }
